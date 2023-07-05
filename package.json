@@ -1,0 +1,32 @@
+{
+  "name": "namastereact",
+  "version": "1.0.0",
+  "description": "This is react repo by K S S Harsha",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksriharsha18/reactLearning.git"
+  },
+  "keywords": [],
+  "author": "K S S Harsha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ksriharsha18/reactLearning/issues"
+  },
+  "homepage": "https://github.com/ksriharsha18/reactLearning#readme",
+  "devDependencies": {
+    "parcel": "^2.9.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browsersList": [
+    "Last 4 versions"
+  ]
+}
