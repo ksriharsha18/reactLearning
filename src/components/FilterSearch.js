@@ -1,12 +1,24 @@
-import { useState } from "react"
+import userContext from "../utils/userContext"
+import { useState,useContext } from "react"
 
 export default FilterSearch = (props) => {
+    const {loggedInUser, setUserName} = useContext(userContext)
     const [searchText, setSearchText] = useState("")
-    let {resData, searchAction, setSearchAction, setResData} = props
+    let {resData, setSearchAction} = props
+    const searchResult = (restaurant) => {
+        if(restaurant.data.name.toLowerCase().includes(searchText.toLowerCase())) {
+            return true
+        } else if(restaurant.data.cuisines.join(",").toLowerCase().includes(searchText.toLowerCase())) {
+            return true
+        } else {
+            return false
+        }
+    }
     return (
-        <div className="searchFilterSection">
-            <div className="searchBar">
-                <input type="text" className="search-box"
+        <div className="searchFilterSection max-w-c flex justify-between items-center">
+            <div className="searchBar flex px-12">
+                <input type="text" className="search-box input border-black border"
+                    placeholder="Search"
                     value = {searchText}
                     onChange = {e => {
                         return(
@@ -15,12 +27,13 @@ export default FilterSearch = (props) => {
                     }}
                 />
                 <button
+                    className="btn btn-blue"
                     onClick={() => {
                         if(searchText.length !== 0) {
                             setSearchAction(
                                 resData.filter((restaurant) => {
                                     return (
-                                        restaurant.data.name.toLowerCase().includes(searchText.toLowerCase())
+                                        searchResult(restaurant)
                                     )
                                 })
                             )
@@ -28,29 +41,40 @@ export default FilterSearch = (props) => {
                             setSearchAction(resData)
                         }
                     }}
-                >Search</button>
+                >
+                    Search
+                </button>
             </div>
-            <div className="filterButtons">
-                <button className="filter"
+            <div>
+                <label>Add User :</label>
+                <input type="text" className="border border-black p-1"
+                    value={loggedInUser}
+                    onChange={e => {
+                        setUserName(e.target.value)
+                    }}
+                />
+            </div>
+            <div className="filterButtons flex justify-end px-24 my-2.5">
+                <button className="filter btn bcg-green mx-1.5"
                     onClick={() => {
                         setSearchAction(resData.filter((restaurant) => {
-                            return restaurant.type === "restaurant" && restaurant.data.avgRating >= 4.0
+                            return restaurant.info.avgRating >= 4.0
                         }))
                     }}
                 >
                     rating
                 </button>
-                <button className="rateLTH"
+                <button className="rateLTH btn bcg-green mx-1"
                     onClick={()=>{
-                        setSearchAction([...resData].sort((a,b) =>a.data.costForTwo - b.data.costForTwo))
+                        setSearchAction([...resData].sort((a,b) =>parseInt(a.info.costForTwo.substring(1,4)) - parseInt(b.info.costForTwo.substring(1,4))))
                     }}
                 >
                     Cost:Low To High
                 </button>
-                <button className="rateHTL"
+                <button className="rateHTL btn bcg-green mx-1"
                     onClick={() => {
                         setSearchAction([...resData].sort((a,b) => {
-                            return b.data.costForTwo - a.data.costForTwo
+                            return parseInt(b.info.costForTwo.substring(1,4)) - parseInt(a.info.costForTwo.substring(1,4))
                         }))
                     }}
                 >

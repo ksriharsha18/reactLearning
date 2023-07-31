@@ -1,0 +1,520 @@
+@import "./node_modules/font-awesome/css/font-awesome";
+
+.container {
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.resMenu-Conatainer {
+    max-width: 800px;
+    min-height: 800px;
+    margin: 20px auto 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px;
+    border: 1px solid #fff000;
+}
+
+.header figure {
+    width: 10rem;
+    height: 7rem;
+    margin: 0;
+}
+
+.header .login {
+    margin: 0 10px;
+    width: 80px;
+    cursor: pointer;
+}
+
+.header figure img {
+    width: 100%;
+    height: 100%;
+}
+
+.header .navItems ul {
+    display: flex;
+    list-style-type: none;
+}
+.header .navItems ul li {
+    margin: 10px;
+    padding: 10px;
+}
+
+.searchFilterSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchFilterSection .searchBar {
+    padding: 0 3rem;
+}
+
+.filterButtons {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0;
+    padding: 0 3rem;
+}
+
+.filterButtons button {
+    margin: 0 5px;
+}
+
+.cancel {
+    display: none;
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cancel.active {
+    display: inline-block;
+    z-index: 1;
+}
+
+.restaurant-container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: flex-start;
+}
+
+.shimmer-res-card {
+    width: 290px;
+    height: 250px;
+    padding: 5px;
+    margin: 20px 40px;
+    cursor: pointer;
+    background-color: lightgray;
+    border: 1px solid #ddd;
+}
+
+.shimmer-res-card .img {
+    width: 100%;
+    height: 165px;
+    background-color: rgb(241, 239, 239);
+    margin: 5px 0;
+}
+
+.shimmer-res-card .shimmer-cuisine {
+    background-color: rgb(241, 239, 239);
+    width: 100%;
+    height: 12px;
+    margin: 5px 0;
+}
+
+.shimmer-res-card .hotelFeedback .shimmer-rating {
+    background-color: rgb(241, 239, 239);
+    width: 100%;
+    height: 12px;
+    margin: 5px 0;
+}
+
+.shimmer-res-card .hotelFeedback h5 {
+    background-color: rgb(241, 239, 239);
+    width: 100%;
+    height: 11px;
+    margin: 5px 0;
+}
+
+.res-Card {
+    max-width: 25%;
+    flex-basis: 25%;
+    height: auto;
+    padding: 5px;
+    margin: 20px 40px;
+    cursor: pointer;
+    border: 1px solid #fff;
+}
+
+.res-Card:hover {
+    border: 1px solid #000;
+}
+
+.res-Card figure {
+    width: 100%;
+    margin: 0;
+}
+
+.res-Card figure img {
+    width: 100%;
+}
+
+.res-Card .cuisine {
+    display: block;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.res-Card .hotelFeedback {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hotelFeedback h5 {
+    display: inline-block;
+}
+
+.hotelFeedback .rating {
+    background-color: #48c479;
+    color: #ffffff;
+    padding: 2px 5px;
+}
+
+.restaurantInformation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    margin-bottom: 18px;
+    margin-bottom: 1px dashed #d3d3d3;
+}
+
+.ratingInfirmation {
+    background-color: #fff;
+    border: 1px solid #e9e9eb;
+    box-shadow: 0 1px 5px #f9f9f9;
+    border-radius: 6px;
+    max-width: 80px;
+    height: 69.3036px;
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.restaurantInfoBlock {
+    margin: 0 16px;
+}
+
+.rating {
+    font-weight: 700;
+    color: #3d9b6d;
+    padding-bottom: 10px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #e9e9eb;
+}
+
+.totalRating {
+    font-weight: 200;
+    font-size: 10px;
+    width: auto;
+    height: auto;
+    font-family: ProximaNovaCondensedRegular,arial,Helvetica Neue,sans-serif;
+}
+
+.resName {
+    font-weight: 600;
+    font-size: 1.43rem;
+    color: #282c3f;
+    margin-bottom: 8px;
+}
+
+.resCuisines {
+    font-size: .93rem;
+    color: #7e808c;
+    height: calc(0.93rem + 2px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    margin-bottom: 5px;
+}
+
+.border_between {
+    border: 1px dashed #d3d3d3;
+    margin-bottom: 18px;
+}
+
+.avgTime {
+    display: inline-block;
+    margin-right: 24px;
+    font-weight: 700;
+    font-size: 15px;
+    color: #3e4152;
+}
+
+.vegetarianflag {
+    margin: 24px 16px 0;
+}
+
+.vegOnly {
+    font-size: 1rem;
+    color: #3d4152;
+    font-weight: 600;
+}
+
+.vegButton {
+    margin-left: 12px;
+    font-size: 0;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+}
+
+.vegButton:active {
+    color: #0f8a65;
+}
+
+.btnStrucOne {
+    width: 36px;
+    height: 18px;
+    background-color: #d4d5d9;
+    position: relative;
+    display: inline-block;
+    border-radius: 4px;
+    transition: background-color .25s linear;
+    transform: translateZ(0);
+}
+
+.vegButtonStrucone {
+    background-color: #0f8a65;
+}
+
+.btnStrucTwo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border: 2px solid #d4d5d9;
+    transition: all .25s linear;
+    will-change: transform,border-color;
+    border-radius: 4px;
+}
+
+.toggleShift {
+    transform: translate3d(18px,0,0);
+    border-color: rgb(0, 128, 0);
+}
+
+.btnStrucThree {
+    opacity: 0;
+    transition: opacity .25s linear;
+    will-change: opacity;
+}
+
+.btnStrucFour {
+    background: #0f8a65;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%,-50%,0);
+}
+
+.vegBorderBelow {
+    height: 0.5px;
+    margin: 24px auto;
+    border-bottom: 0.5px solid #d3d3d3;
+}
+
+.MenuContainer {
+    position: relative;
+    margin: 24px 8px 16px 16px;
+}
+
+.MenuContainer button {
+    padding-right: 16px;
+    font-size: 1.15rem;
+    width: 100%;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.MenuContainer button h3 {
+    color: #3e4152;
+    font-weight: 800;
+    font-size: 1.3rem;
+    display: inline-block;
+}
+
+.collapsibleIcon {
+    font-size: large;
+    font-weight: 1000;
+}
+
+.collapsibleIcon::after {
+    content: "-";
+}
+
+.minusIcon::after {
+    content: "+"
+}
+
+.hide {
+    display: none;
+}
+
+.itemDetailContainer {
+    padding-bottom: 14px;
+}
+
+.itemDetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.itemInfo h3 {
+    margin: 4px 0 0;
+}
+
+.itemInfo .itemPriceContainer {
+    margin-right: 8px;
+    font-weight: 400;
+    color: #3e4152;
+    font-size: 1rem;
+}
+
+.itemInfo .infoDescription{
+    margin-top: 14px;
+    line-height: 1.3;
+    color: rgb(40 44 63 / 43%);
+    letter-spacing: -.3px;
+    font-size: 1rem;
+}
+
+.itemDivider {
+    border-bottom: 0.5px solid #d3d3d3;
+    height: 0.5px;
+    margin: 6px 0 20px;
+}
+
+.imageDescription {
+    position: relative;
+    margin-left: 16px;
+    min-width: 118px;
+    height: 120px;
+    font-size: 0;
+}
+
+.imageDescription .itemFigure {
+    width: 118px;
+    height: 96px;
+    position: absolute;
+    margin: 0;
+}
+
+.imageDescription .itemFigure img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 6px;
+    top: 0;
+    right: 0;
+}
+
+.addToCart {
+    position: absolute;
+    bottom: 8px;
+    left: 10%;
+}
+
+.addButton {
+    position: relative;
+    width: 96px;
+    height: 36px;
+    background-color: #fff;
+    border: 1px solid #d4d5d9;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.addButtonText {
+    position: absolute;
+    font-size: .9rem;
+    font-weight: 300;
+    line-height: 30px;
+    color: #0f8a65;
+    left: 35%;
+    top: 5%;
+}
+
+.addSign {
+    position: absolute;
+    right: 2px;
+    font-size: .9rem;
+    font-weight: 200;
+    color: #0f8a65;
+}
+
+.categoryBorder {
+    height: 16px;
+    border-bottom: 16px solid #f1f1f6;
+}
+
+.customizable {
+    color: #7e808c;
+    font-size: 10px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    line-height: 1;
+    font-weight: 500;
+    top: 35px;
+}
+
+.menuPath {
+    color: inherit;
+    background-color: #fff;
+    text-decoration: none;
+}
+
+.vegNonveg {
+    height: 17px;
+}
+
+.vnvSymbolveg {
+    position: relative;
+    width: 14px;
+    height: 16px;
+    border: 1px solid #0f8a65;
+}
+
+.vnvSymbolnonVeg {
+    position: relative;
+    width: 14px;
+    height: 16px;
+    border: 1px solid #e10909;
+}
+
+.vegClassColour {
+    position: absolute;
+    bottom: 3px;
+    left: 2px;
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #0f8a65;
+}
+
+.veg {
+    background-color: #0f8a65;
+}
+
+.nonVeg {
+    background-color: #e10909;
+}
