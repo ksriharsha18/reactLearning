@@ -11,6 +11,8 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import Cart from "./components/Cart";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { useState,useEffect,useContext } from "react";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 import userContext from "./utils/userContext";
 import cartDetails from "./utils/CartContext";
 
@@ -33,14 +35,16 @@ const AppLayout = () => {
     },[])
 
     return (
-        <cartDetails.Provider value={{cartDetail:cartItems, setCartItems}}>
-            <userContext.Provider value={{loggedInUser: userName, setUserName}}>
-                <div className="app">
-                    <Header />
-                    <Outlet />
-                </div>
-            </userContext.Provider>
-        </cartDetails.Provider>
+        <Provider store={appStore}>
+            <cartDetails.Provider value={{cartDetail:cartItems, setCartItems}}>
+                <userContext.Provider value={{loggedInUser: userName, setUserName}}>
+                    <div className="app">
+                        <Header />
+                        <Outlet />
+                    </div>
+                </userContext.Provider>
+            </cartDetails.Provider>
+        </Provider>
     )
 }
 

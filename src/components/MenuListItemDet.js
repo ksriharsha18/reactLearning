@@ -1,20 +1,32 @@
-import { useState,useEffect,useContext } from "react"
+// import { useState,useEffect,useContext } from "react"
 import { ITEM_CARD_IMAGE } from "../../configData"
-import cartDetails from "../utils/CartContext";
+// import cartDetails from "../utils/CartContext";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
+import { useSelector } from "react-redux";
 
 export default MenuListItemDet = (props) => {
     const { card, index, totalLength } = props
     const { info } = card?.card
-    const [cartProd, setCartProd] = useState([]);
-    const {cartDetail,setCartItems} = useContext(cartDetails)
-    useEffect(() => {
-        cartDetail !== undefined && setCartProd(cartDetail)
-    },[cartDetail])
-    useEffect(() => {
-        if(cartProd.length !== 0) {
-            setCartItems(cartProd)
-        }
-    },[cartProd])
+    // const [cartProd, setCartProd] = useState([]);
+    // const {cartDetail,setCartItems} = useContext(cartDetails)
+    // useEffect(() => {
+    //     cartDetail !== undefined && setCartProd(cartDetail)
+    // },[cartDetail])
+    // useEffect(() => {
+    //     if(cartProd.length !== 0) {
+    //         setCartItems(cartProd)
+    //     }
+    // },[cartProd])
+
+    const dispatch = useDispatch();
+
+    const addMenuItem = (info) => {
+        console.log(info)
+        dispatch(addItem(info))
+    }
+
+    const cartItems = useSelector((store) => store.cart.items)
 
     return (
         <div>
@@ -41,7 +53,9 @@ export default MenuListItemDet = (props) => {
                         <div className="addToCart absolute bottom-2 left-[10%]">
                             <div
                                 className="addButton relative w-24 h-9 bg-white border border-solid border-gray-200 rounded-md cursor-pointer"
-                                onClick={() => setCartProd(cartProd.concat(info))}>
+                                    // onClick={() => setCartProd(cartProd.concat(info))}
+                                    onClick={() => addMenuItem(info)}
+                                >
                                 <span className="addButtonText absolute text-sm font-semibold leading-8 text-green-500 left-[35%] top-[5%]">ADD</span>
                             {(Object.keys(info.variants).length !== 0 || Object.keys(info.variantsV2).length !== 0 || info.addons !== undefined) ? (
                                 <>

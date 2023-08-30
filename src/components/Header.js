@@ -1,13 +1,16 @@
 import { useState, useEffect, useContext } from "react"
 import { Link } from "react-router-dom";
 import userContext from "../utils/userContext";
-import cartDetails from "../utils/CartContext";
+// import cartDetails from "../utils/CartContext";
+import { useSelector } from "react-redux";
 
 export default Header = () => {
     const[loginButton, setLoginButton] = useState("LogIn");
 
     const userLoggedIn = useContext(userContext)
-    const {cartDetail,setCartItems} = useContext(cartDetails)
+    // const {cartDetail,setCartItems} = useContext(cartDetails)
+
+    const cartItems = useSelector((store) => (store.cart.items))
 
     return (
         <header>
@@ -27,7 +30,7 @@ export default Header = () => {
                         </li>
                         <li className="m-2.5 p-2.5">Contact</li>
                         <li className="m-2.5 p-2.5">
-                            <Link to="/cart">Cart {cartDetail !== undefined && cartDetail.length}</Link>
+                            <Link to="/cart">Cart {cartItems.length !== 0 && cartItems.length}</Link>
                         </li>
                         <li className="m-2.5 p-2.5">
                             <Link to="/InstaMart">InstaMart</Link>

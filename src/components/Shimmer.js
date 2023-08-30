@@ -3,9 +3,9 @@ import ShimmerResCard from "./ShimmerResCard"
 export default function Shimmer() {
     return(
         <section>
-            <div className="container">
+            <div className="container max-w-c mx-auto">
                 <div className="body">
-                    <div className="restaurant-container">
+                    <div className="restaurant-container flex flex-wrap text-center justify-start">
                         {/* RestaurentTiles */}
                         <ShimmerResCard />
                         <ShimmerResCard />
