@@ -5,10 +5,11 @@ export default FilterSearch = (props) => {
     const {loggedInUser, setUserName} = useContext(userContext)
     const [searchText, setSearchText] = useState("")
     let {resData, setSearchAction} = props
+    console.log(resData)
     const searchResult = (restaurant) => {
-        if(restaurant.data.name.toLowerCase().includes(searchText.toLowerCase())) {
+        if(restaurant.info.name.toLowerCase().includes(searchText.toLowerCase())) {
             return true
-        } else if(restaurant.data.cuisines.join(",").toLowerCase().includes(searchText.toLowerCase())) {
+        } else if(restaurant.info.cuisines.join(",").toLowerCase().includes(searchText.toLowerCase())) {
             return true
         } else {
             return false
